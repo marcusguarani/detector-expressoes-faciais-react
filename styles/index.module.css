@@ -1,0 +1,236 @@
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 28px;
+
+    overflow: hidden;
+}
+
+/* Glow decorativo atrás do painel, cor conforme a expressão detectada */
+.glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60vmax;
+    height: 60vmax;
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(circle at 50% 45%, currentColor 0%, transparent 55%);
+    opacity: 0.28;
+    filter: blur(10px);
+    pointer-events: none;
+
+    transition: color 800ms linear;
+}
+
+/* =-=-=-=-=-=-=-=-=-=-= Cabeçalho =-=-=-=-=-=-=-=-=-=-= */
+.cabecalho {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+}
+
+.cabecalho h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.statusPonto {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--text-faint);
+}
+
+.statusPonto.ativo {
+    background-color: #3fa772;
+    box-shadow: 0 0 0 3px rgba(63, 167, 114, 0.18);
+}
+
+/* =-=-=-=-=-=-=-=-=-=-= Palco / painel principal =-=-=-=-=-=-=-=-=-=-= */
+.painel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    width: min(92vw, 620px);
+    padding: 28px;
+
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+/* =-=-=-=-=-=-=-=-=-=-= Sessão do vídeo =-=-=-=-=-=-=-=-=-=-= */
+.divWebcam {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    align-self: center;
+    line-height: 0;
+}
+
+.sessaoWebcam {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    align-self: stretch;
+}
+
+.sessaoWebcam video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-soft);
+    background-color: #000;
+}
+
+/* O canvas precisa ocupar exatamente o mesmo box (em CSS) que o vídeo,
+   já que sua resolução interna é fixada via faceapi.matchDimensions
+   com base em videoWidth/videoHeight — do contrário a detecção desenhada
+   fica fora de escala em relação à imagem exibida. */
+.sessaoWebcam canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-md);
+}
+
+/* =-=-=-=-=-=-=-=-=-=-= Cartão de leitura =-=-=-=-=-=-=-=-=-=-= */
+.leitura {
+    display: flex;
+    align-self: stretch;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.leituraItem {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 18px;
+    background-color: var(--surface-2);
+}
+
+.leituraItem + .leituraItem {
+    border-left: 1px solid var(--border);
+}
+
+.leituraRotulo {
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    font-weight: 500;
+}
+
+.leituraValor {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.leituraPonto {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+/* =-=-=-=-=-=-=-=-=-=-= Estado ocioso / erro =-=-=-=-=-=-=-=-=-=-= */
+.divInfos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+    padding: 8px 12px 4px;
+}
+
+.divInfos span {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.divInfosAlt span {
+    color: var(--text-muted);
+}
+
+.centralizar {
+    color: #e5484d;
+}
+
+/* =-=-=-=-=-=-=-=-=-=-= Botão =-=-=-=-=-=-=-=-=-=-= */
+.botao {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 42px;
+    padding: 0 26px;
+    border: none;
+    border-radius: var(--radius-sm);
+
+    background-color: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+
+    transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.botao:hover {
+    filter: brightness(1.08);
+}
+
+.botao:active {
+    transform: scale(0.98);
+}
+
+.botao:disabled {
+    cursor: not-allowed;
+    filter: brightness(60%);
+}
+
+.botaoCustom {
+    align-self: center;
+}
