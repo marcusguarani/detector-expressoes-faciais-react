@@ -1,4 +1,8 @@
+<div align="center">
+    
 # Detector de Expressões Faciais
+
+</div>
 
 Aplicação web que detecta rostos pela webcam em tempo real e identifica expressão facial, faixa etária e gênero estimados — tudo rodando **inteiramente no navegador**, sem enviar imagem ou dado algum para qualquer servidor.
 
@@ -48,8 +52,8 @@ Pré-requisitos: [Node.js](https://nodejs.org/) 16+ instalado.
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/marcusguarani/reconhecimento-facial-react.git
-cd reconhecimento-facial-react
+git clone https://github.com/marcusguarani/detector-expressoes-faciais-react.git
+cd detector-expressoes-faciais-react
 
 # 2. Instale as dependências
 npm install
