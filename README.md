@@ -106,3 +106,7 @@ Todo o processamento (detecção facial, classificação de expressão, estimati
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-marcusguarani-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/marcusguarani)
 [![Portfólio](https://img.shields.io/badge/Portf%C3%B3lio-marcusguarani.com.br-000000?style=flat&logo=googlechrome&logoColor=white)](https://marcusguarani.com.br)
 
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
