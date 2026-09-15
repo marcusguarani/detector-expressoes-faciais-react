@@ -7,9 +7,9 @@
 Aplicação web que detecta rostos pela webcam em tempo real e identifica expressão facial, faixa etária e gênero estimados — tudo rodando **inteiramente no navegador**, sem enviar imagem ou dado algum para qualquer servidor.
 
 <!-- Adicione aqui um screenshot ou GIF da aplicação em funcionamento -->
-<!-- ![Preview do projeto](./docs/preview.png) -->
+![Preview do projeto](./docs/preview.png)
 
-**Deploy:** <!-- adicione aqui o link do deploy, ex: https://seu-projeto.vercel.app -->
+**Deploy:** https://detector-expressoes-faciais-react.vercel.app/
 
 ---
 
